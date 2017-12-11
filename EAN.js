@@ -2,9 +2,9 @@ const Random = require('./Random.js');
 
 const EAN = function(){
 
-    let sysCode;//3 digits
-    let manCode;//5 digits
-    let proCode;//4 digits
+    let sysCode = makeSysCode();//3 digits
+    let manCode = makeManCode();//5 digits
+    let proCode =  makeProCode();//4 digits
     let checkDigit = check();
 
 
@@ -29,19 +29,19 @@ const EAN = function(){
             return "539";//Ireland
         }
         else if (r = 7){
-            return "";
+            return "741";//El Salvador
         }
         else if (r = 8){
-
+            return "093";//Australia
         }
 
 
     }
     function makeManCode(){
-        return Random().digit(5);
+        return String(Random().digit(5));
     }
     function makeProCode(){
-        return Random().digit(4);
+        return String(Random().digit(4));
     }
     function check(){
         //create this function
@@ -64,7 +64,8 @@ const EAN = function(){
     }
 
     function read(){
-        //create this function
+        let code = sysCode+manCode+proCode;
+        return code + "-" + checkDigit;
 
     }
     return {sysCode,manCode,proCode,checkDigit,read};
