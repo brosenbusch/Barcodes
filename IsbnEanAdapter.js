@@ -6,7 +6,6 @@ function IsbnEanAdapter(isbnOBJ){
     code = "978"+code;//add bookland Code
     code = code.substring(0,12)
     function check(){
-        let code = sysCode+manCode+proCode;
         let sum = 0;
         for(let c=0;c<12;c++){
             if(c%2 ==0){
@@ -29,3 +28,13 @@ function IsbnEanAdapter(isbnOBJ){
     }
     return {code, checkDigit, read};
 }
+
+function test(){
+    let I = new ISBN();
+    let a = new IsbnEanAdapter(I);
+    console.log(a.code);
+    console.log(a.checkDigit);
+    console.log(a.read());
+}
+
+test();
