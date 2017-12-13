@@ -30,8 +30,8 @@ function IsbnEanAdapter(isbnOBJ){
 }
 
 function test(){
-    let I = new ISBN();
-    let a = new IsbnEanAdapter(I);
+    let i = new ISBN();
+    let a = new IsbnEanAdapter(i);
     console.log(a.code);
     console.log(a.checkDigit);
     console.log(a.read());

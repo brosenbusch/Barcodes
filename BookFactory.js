@@ -14,9 +14,11 @@ const BookFactory = function (){
 
     return {createBook};
 }
+
+
 function test(){
     let b = new BookFactory();
-    console.log(b.createBook().read());
+    console.log(b.createBook(2000).read());
 }
 test();
-module.exports = BookFactory;
+//module.exports = BookFactory;
