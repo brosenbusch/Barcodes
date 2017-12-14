@@ -20,5 +20,5 @@ function test(){
     let b = new BookFactory();
     console.log(b.createBook(2000).read());
 }
-test();
-//module.exports = BookFactory;
+//test();
+module.exports = BookFactory;
